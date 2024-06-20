@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <conio.h> // If you're on Windows, you may need this for _getch()
+#include <conio.h>     
 
 struct patient {
     int id;
