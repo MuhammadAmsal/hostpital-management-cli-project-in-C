@@ -29,11 +29,27 @@ void addDoctor();
 void doctorList();
 
 int main() {
-    int ch;
-
+ int ch;
+    char userInput[100];
+    int passwordInput;
+    char userName[] = "admin@gmail.com";
+    int password=12345;
+    
+    
+    printf("################## ADMIN PORTAL ###################\n\n\n");
+    printf("Enter UserName: ");
+    scanf("%s",&userInput);
+    printf("Enter Password: ");
+     scanf("%d",&passwordInput);
+     
+      
+     if(strcmp(userInput, userName) == 0 && passwordInput == password) {
+    	printf("working");
+   
+    	 
     while (1) {
         system("cls");
-        printf("<== Hospital Management System ==>\n");
+        printf("<============== Hospital Management System ============>\n");
         printf("1.Admit Patient\n");
         printf("2.Patient List\n");
         printf("3.Discharge Patient\n");
@@ -74,6 +90,13 @@ int main() {
         _getch();  // Use _getch() if you're on Windows and included conio.h
     }
 
+    	
+	}else if(!(passwordInput== password)){
+		printf("Incorrect Password");
+	}else if(!(strcmp(userInput, userName) == 0)){
+		printf("Incorrect Username");
+	}
+    
     return 0;
 }
 
@@ -112,7 +135,7 @@ void admitPatient() {
 
 void patientList() {
     system("cls");
-    printf("<== Patient List ==>\n\n");
+    printf("<============= Patient List ==========>\n\n");
     printf("%-10s %-30s %-30s %-20s %s\n", "Id", "Patient Name", "Address", "Disease", "Date");
     printf("----------------------------------------------------------------------------------------------------------\n");
 
@@ -127,7 +150,7 @@ void patientList() {
 void dischargePatient() {
     int id, f = 0;
     system("cls");
-    printf("<== Discharge Patient ==>\n\n");
+    printf("<============ Discharge Patient ===========>\n\n");
     printf("Enter Patient id to discharge: ");
     scanf("%d", &id);
 
@@ -195,7 +218,7 @@ void addDoctor() {
 
 void doctorList() {
     system("cls");
-    printf("<== Doctor List ==>\n\n");
+    printf("<=========== Doctor List ==========>\n\n");
 
     printf("%-10s %-30s %-30s %-30s %s\n", "id", "Name", "Address", "Specialize", "Date");
     printf("-------------------------------------------------------------------------------------------------------------------\n");
